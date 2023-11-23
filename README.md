@@ -1,81 +1,32 @@
-# Turborepo starter
+## MonoRepo Playgound
 
-This is an official starter Turborepo.
+**Backgound:**
 
-## Using this example
+> I have always wanted to create a project that shared backend services between a react native application
+> and a web app, but up until now have had tons of issues with mono repo intimidations.
+>
+> The goal of this project is to get over that intimidation and have fun with a simple project that will allow me to
+> play with the infrustructure without any anxiety.
 
-Run the following command:
+**Goals:**
 
-```sh
-npx create-turbo@latest
-```
+1. Create a shared authentication/authorization strategy between the mobile and web applications
+2. Create a drizzle backend with zod type checking and clean migrations
+3. Use tRPC and Next 14 app router to create an api that is accessible by both the mobile and web apps
+4. Deploy both applications using CI/CD
 
-## What's inside?
+**Nice To Haves:**
 
-This Turborepo includes the following packages/apps:
+> It would be nice to play around with testing in all environments and learning more about front-end testing
+> through this project.
 
-### Apps and Packages
+<img src="./apps/web/app/favicon.ico" width='200' />
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
-- `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
+### Project Status:
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm build
-```
-
-### Develop
-
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm dev
-```
-
-### Remote Caching
-
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+- [ ] Create tRPC Server
+- [ ] Create Drizzle Backend
+- [ ] Create Shared Api Package (models and api functions)
+- [ ] Look into created Shared tRPC client package to share tRPC react query functions
+- [ ] UI web implementation (tailwind, server actions?)
+- [ ] UI mobile implementation
