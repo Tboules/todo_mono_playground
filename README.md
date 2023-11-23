@@ -20,6 +20,8 @@
 > It would be nice to play around with testing in all environments and learning more about front-end testing
 > through this project.
 
+---
+
 <img src="./apps/web/app/favicon.ico" width='200' />
 
 ### Project Status:
