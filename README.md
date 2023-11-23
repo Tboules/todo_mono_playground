@@ -3,7 +3,7 @@
 **Backgound:**
 
 > I have always wanted to create a project that shared backend services between a react native application
-> and a web app, but up until now have had tons of issues with mono repo intimidations.
+> and a web app, but up until now have had tons of issues with mono repo intimidation.
 >
 > The goal of this project is to get over that intimidation and have fun with a simple project that will allow me to
 > play with the infrustructure without any anxiety.
