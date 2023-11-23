@@ -2113,6 +2113,23 @@
   resolved "https://registry.yarnpkg.com/@tootallnate/quickjs-emscripten/-/quickjs-emscripten-0.23.0.tgz#db4ecfd499a9765ab24002c3b696d02e6d32a12c"
   integrity sha512-C5Mc6rdnsaJDjO3UpGW/CQTHtCKaYlScZTly4JIu97Jxo/odCiH0ITnDXSJPTOrEKk/ycSZ0AOgTmkDtkOsvIA==
 
+"@trpc/client@^10.44.1":
+  version "10.44.1"
+  resolved "https://registry.yarnpkg.com/@trpc/client/-/client-10.44.1.tgz#5666f5b81566d2e44802706581d9e6f2b591502e"
+  integrity sha512-vTWsykNcgz1LnwePVl2fKZnhvzP9N3GaaLYPkfGINo314ZOS0OBqe9x0ytB2LLUnRVTAAZ2WoONzARd8nHiqrA==
+
+"@trpc/next@^10.44.1":
+  version "10.44.1"
+  resolved "https://registry.yarnpkg.com/@trpc/next/-/next-10.44.1.tgz#22daa333a4d55905f19716e6850047ce79cfc8d0"
+  integrity sha512-ez2oYUzmaQ+pGch627sRBfeEk3h+UIwNicR8WjTAM54TPcdP5W9ZyWCyO5HZTEfjHgGixYM4tCIxewdKOWY9yA==
+  dependencies:
+    react-ssr-prepass "^1.5.0"
+
+"@trpc/server@^10.44.1":
+  version "10.44.1"
+  resolved "https://registry.yarnpkg.com/@trpc/server/-/server-10.44.1.tgz#0d089a3cd5d1268aa8f6845a183329fcac7f2fac"
+  integrity sha512-mF7B+K6LjuboX8I1RZgKE5GA/fJhsJ8tKGK2UBt3Bwik7hepEPb4NJgNr7vO6BK5IYwPdBLRLTctRw6XZx0sRg==
+
 "@tsconfig/node10@^1.0.7":
   version "1.0.9"
   resolved "https://registry.yarnpkg.com/@tsconfig/node10/-/node10-1.0.9.tgz#df4907fc07a886922637b15e02d4cebc4c0021b2"
@@ -7599,6 +7616,11 @@ react-shallow-renderer@^16.15.0:
   dependencies:
     object-assign "^4.1.1"
     react-is "^16.12.0 || ^17.0.0 || ^18.0.0"
+
+react-ssr-prepass@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/react-ssr-prepass/-/react-ssr-prepass-1.5.0.tgz#bc4ca7fcb52365e6aea11cc254a3d1bdcbd030c5"
+  integrity sha512-yFNHrlVEReVYKsLI5lF05tZoHveA5pGzjFbFJY/3pOqqjGOmMmqx83N4hIjN2n6E1AOa+eQEUxs3CgRnPmT0RQ==
 
 react@18.2.0, react@^18.2.0:
   version "18.2.0"
