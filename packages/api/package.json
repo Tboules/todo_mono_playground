@@ -1,0 +1,7 @@
+{
+  "name": "@repo/api",
+  "dependencies": {
+    // Use whatever version of TypeScript you're using
+    "typescript": "latest"
+  }
+}
