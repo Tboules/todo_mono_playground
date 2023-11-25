@@ -9,6 +9,7 @@
     "postgres": "^3.4.3"
   },
   "devDependencies": {
+    "dotenv-cli": "^7.3.0",
     "drizzle-kit": "^0.20.4"
   }
 }
