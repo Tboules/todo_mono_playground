@@ -26,7 +26,7 @@
 
 ### Project Status:
 
-- [ ] Create tRPC Server
+- [x] Create tRPC Server
 - [ ] Create Drizzle Backend
 - [ ] Create Shared Api Package (models and api functions)
 - [ ] Look into created Shared tRPC client package to share tRPC react query functions
