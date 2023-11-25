@@ -3,6 +3,7 @@
   "private": true,
   "main": "./index.ts",
   "types": "./index.ts",
+  "type": "module",
   "version": "0.0.0",
   "dependencies": {
     "drizzle-orm": "^0.29.0",
@@ -10,6 +11,11 @@
   },
   "devDependencies": {
     "dotenv-cli": "^7.3.0",
-    "drizzle-kit": "^0.20.4"
+    "drizzle-kit": "^0.20.4",
+    "tsx": "^4.5.0"
+  },
+  "scripts": {
+    "migrate": "tsx ./src/migrate.ts",
+    "generate": "drizzle-kit generate:pg"
   }
 }

@@ -5,9 +5,9 @@ dotenv.config({
   path: "../../.env",
 });
 
-console.log(process.env.POSTGRES_URL);
+export const postgresUrl = process.env.POSTGRES_URL;
 
-if (!process.env.POSTGRES_URL) {
+if (!postgresUrl) {
   throw new Error("POSTGRES_URL not set!");
 }
 
@@ -16,6 +16,6 @@ export default {
   driver: "pg",
   out: "./drizzle/migrations",
   dbCredentials: {
-    connectionString: process.env.POSTGRES_URL,
+    connectionString: postgresUrl,
   },
 } satisfies Config;
