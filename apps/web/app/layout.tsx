@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Noto_Sans_Mono } from "next/font/google";
+import TRPCProvider from "./_trpc/provider";
 
 const notoSans = Noto_Sans_Mono({
   subsets: ["latin"],
@@ -18,7 +19,9 @@ export default function RootLayout({
 }): JSX.Element {
   return (
     <html lang="en" className={notoSans.className}>
-      <body>{children}</body>
+      <body>
+        <TRPCProvider>{children}</TRPCProvider>
+      </body>
     </html>
   );
 }
