@@ -1,6 +1,6 @@
 import { drizzle } from "drizzle-orm/postgres-js";
 import postgres from "postgres";
-import { postgresUrl } from "../drizzle.config.js";
+import { postgresUrl } from "../drizzle.config";
 
 import * as todo from "./schema/todo";
 

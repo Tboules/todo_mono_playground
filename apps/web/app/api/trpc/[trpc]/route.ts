@@ -1,6 +1,7 @@
 import { fetchRequestHandler } from "@trpc/server/adapters/fetch";
 
 import { appRouter } from "@repo/api";
+import { db } from "@repo/db";
 
 /**
  * Configure basic CORS headers
@@ -18,7 +19,9 @@ const handler = async (req: Request) => {
     endpoint: "/api/trpc",
     req,
     router: appRouter,
-    createContext: () => ({}),
+    createContext: () => ({
+      db: db,
+    }),
   });
 
   setCorsHeaders(response);
