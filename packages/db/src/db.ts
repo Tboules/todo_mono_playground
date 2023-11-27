@@ -12,6 +12,6 @@ if (!postgresUrl) {
 
 export const drizzlePGClient = postgres(postgresUrl);
 
-export default drizzle(drizzlePGClient, {
+export const db = drizzle(drizzlePGClient, {
   schema,
 });

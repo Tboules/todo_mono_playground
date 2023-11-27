@@ -1,7 +1,14 @@
+import { db } from "@repo/db";
 import { initTRPC } from "@trpc/server";
 import superjson from "superjson";
 
-const trpc = initTRPC.create({
+export const createContext = () => {
+  return {
+    db,
+  };
+};
+
+const trpc = initTRPC.context<typeof createContext>().create({
   transformer: superjson,
 });
 
