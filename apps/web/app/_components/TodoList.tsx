@@ -2,9 +2,16 @@
 
 import { trpc } from "../_trpc/client";
 import TodoCard from "./TodoCard";
+import { RouterOutputs } from "@repo/api";
 
-export default function TodoList() {
-  const todosQuery = trpc.todos.all.useQuery();
+export default function TodoList({
+  initialTodos,
+}: {
+  initialTodos: RouterOutputs["todos"]["all"];
+}) {
+  const todosQuery = trpc.todos.all.useQuery(undefined, {
+    initialData: initialTodos,
+  });
 
   if (todosQuery.isLoading) {
     return (
