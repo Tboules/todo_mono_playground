@@ -29,6 +29,9 @@
 - [x] Create tRPC Server
 - [x] Create Drizzle Backend
 - [x] Create Shared Api Package (models and api functions)
+- [ ] Create client side and server side comps in next
+- [ ] shadcn/ui library for web
+- [ ] modern ui library research for react native
 - [ ] Look into created Shared tRPC client package to share tRPC react query functions
 - [ ] UI web implementation (tailwind, server actions?)
 - [ ] UI mobile implementation
