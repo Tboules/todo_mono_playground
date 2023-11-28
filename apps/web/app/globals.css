@@ -3,3 +3,16 @@
   padding: 0;
   margin: 0;
 }
+
+body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  padding: 0.5rem;
+  width: 100%;
+}

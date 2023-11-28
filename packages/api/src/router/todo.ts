@@ -17,7 +17,7 @@ export const todoRouter = createTRPCRouter({
   create: publicProcedure
     .input(todosInsertSchema.pick({ task: true }))
     .mutation(({ ctx, input }) => {
-      return ctx.db.insert(schema.todos).values(input);
+      return ctx.db.insert(schema.todos).values(input).returning();
     }),
   update: publicProcedure
     .input(todosSelectSchema)
@@ -29,7 +29,8 @@ export const todoRouter = createTRPCRouter({
           status: input.status,
           lastUpdated: new Date(Date.now()),
         })
-        .where(eq(schema.todos.id, input.id));
+        .where(eq(schema.todos.id, input.id))
+        .returning();
     }),
   delete: publicProcedure
     .input(todosSelectSchema.pick({ id: true }))
