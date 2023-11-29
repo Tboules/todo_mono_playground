@@ -1,12 +1,17 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
+import { TrpcProvider } from "./_trpc/provider";
+import TodoList from "./components/TodoList";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Hello World</Text>
-      <StatusBar style="auto" />
-    </View>
+    <TrpcProvider>
+      <View style={styles.container}>
+        <Text>Hello Trpc App</Text>
+        <TodoList />
+        <StatusBar style="auto" />
+      </View>
+    </TrpcProvider>
   );
 }
 
