@@ -6,8 +6,8 @@ export default async function Page() {
   const todos = await serverClient.todos.all();
 
   return (
-    <main>
-      <h1>Todo List</h1>
+    <main className="max-w-screen-md m-auto p-2">
+      <h1 className="text-3xl font-bold underline">Todo List</h1>
       <TodoForm />
       <TodoList initialTodos={todos} />
     </main>
