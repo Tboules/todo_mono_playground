@@ -28,7 +28,13 @@ export default function TodoForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input ref={inputRef} />
+      <input
+        title="Todo"
+        placeholder="Todo"
+        className="border border-black rounded p-2 w-full"
+        ref={inputRef}
+        type="text"
+      />
     </form>
   );
 }

@@ -1,6 +1,5 @@
 import { Text, SafeAreaView, FlatList, View } from "react-native";
 import { trpc } from "../_trpc/client";
-import { useEffect } from "react";
 
 export default function TodoList() {
   const todosQuery = trpc.todos.all.useQuery();

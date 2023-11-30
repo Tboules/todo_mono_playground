@@ -1,7 +1,7 @@
 "use client";
+import { Button } from "../../@/components/ui/button";
 import { trpc } from "../_trpc/client";
 import { RouterOutputs } from "@repo/api";
-import styles from "../styles.module.css";
 
 export default function TodoCard({
   todo,
@@ -13,10 +13,9 @@ export default function TodoCard({
   const utils = trpc.useUtils();
 
   return (
-    <div className={styles.todoCard} key={todo.id}>
-      <p className={styles.label}>{todo.task}</p>
+    <div key={todo.id}>
+      <p>{todo.task}</p>
       <input
-        className={styles.checkbox}
         type="checkbox"
         onChange={(e) => {
           todosUpdate.mutate(
@@ -37,6 +36,7 @@ export default function TodoCard({
       />
 
       <button
+        className="h-10 bg-slate-50 p-4"
         disabled={todosDelete.isLoading}
         onClick={() => {
           todosDelete.mutate(
