@@ -36,7 +36,6 @@ export default function TodoCard({
       />
 
       <button
-        className="h-10 bg-slate-50 p-4"
         disabled={todosDelete.isLoading}
         onClick={() => {
           todosDelete.mutate(

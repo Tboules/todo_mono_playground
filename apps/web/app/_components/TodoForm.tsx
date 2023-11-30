@@ -2,6 +2,7 @@
 
 import { FormEvent, useRef } from "react";
 import { trpc } from "../_trpc/client";
+import { Input } from "@repo/ui/components/ui/input";
 
 export default function TodoForm() {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -9,9 +10,6 @@ export default function TodoForm() {
   const utils = trpc.useUtils();
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    console.log(e);
-    console.log(inputRef.current?.value);
-
     if (inputRef.current?.value) {
       todosMutation.mutate(
         {
@@ -28,13 +26,7 @@ export default function TodoForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input
-        title="Todo"
-        placeholder="Todo"
-        className="border border-black rounded p-2 w-full"
-        ref={inputRef}
-        type="text"
-      />
+      <Input title="Todo" placeholder="Todo" ref={inputRef} type="text" />
     </form>
   );
 }

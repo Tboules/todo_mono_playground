@@ -1,7 +1,9 @@
-import "./globals.css";
+import "@repo/ui/styles/globals.css";
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
 import TRPCProvider from "./_trpc/provider";
+import { cn } from "@repo/ui/lib/utils";
+import { ThemeProvider } from "./_components/theme-provider";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -20,8 +22,20 @@ export default function RootLayout({
 }): JSX.Element {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={fontSans.className}>
-        <TRPCProvider>{children}</TRPCProvider>
+      <body
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased",
+          fontSans.variable,
+        )}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <TRPCProvider>{children}</TRPCProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
