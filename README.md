@@ -30,5 +30,5 @@
 - [x] Create Drizzle Backend
 - [x] Create Shared Api Package (models and api functions)
 - [x] Create client side and server side comps in next
-- [ ] shadcn/ui library for web
+- [x] shadcn/ui library for web
 - [ ] modern ui library research for react native

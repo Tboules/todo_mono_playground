@@ -30,7 +30,7 @@ export default function TodoList({
   }
 
   return (
-    <div>
+    <div className='flex flex-col gap-4'>
       {todosQuery.data.map((todo) => {
         return <TodoCard todo={todo} key={todo.id} />;
       })}
