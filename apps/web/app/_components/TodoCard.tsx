@@ -1,7 +1,8 @@
 "use client";
-import { Button } from "../../@/components/ui/button";
+import { Input } from "@repo/ui/components/ui/input";
 import { trpc } from "../_trpc/client";
 import { RouterOutputs } from "@repo/api";
+import { Button } from "@repo/ui/components/ui/button";
 
 export default function TodoCard({
   todo,
@@ -15,7 +16,7 @@ export default function TodoCard({
   return (
     <div key={todo.id}>
       <p>{todo.task}</p>
-      <input
+      <Input
         type="checkbox"
         onChange={(e) => {
           todosUpdate.mutate(
@@ -35,7 +36,7 @@ export default function TodoCard({
         disabled={todosUpdate.isLoading}
       />
 
-      <button
+      <Button
         disabled={todosDelete.isLoading}
         onClick={() => {
           todosDelete.mutate(
@@ -47,7 +48,7 @@ export default function TodoCard({
         }}
       >
         D
-      </button>
+      </Button>
     </div>
   );
 }
