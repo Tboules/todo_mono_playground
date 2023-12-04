@@ -1,17 +1,16 @@
 import { StatusBar } from "expo-status-bar";
-import { SafeAreaView, StyleSheet, Text } from "react-native";
-import { TrpcProvider } from "./_trpc/provider";
+import { StyleSheet, Text, View } from "react-native";
 import TodoList from "./components/TodoList";
+import { TrpcProvider } from "./_trpc/provider";
 
 export default function App() {
   return (
-    <TrpcProvider>
-      <SafeAreaView style={styles.container}>
-        <Text>Hello Trpc App</Text>
+    <View style={styles.container}>
+      <TrpcProvider>
         <TodoList />
-        <StatusBar style="auto" />
-      </SafeAreaView>
-    </TrpcProvider>
+      </TrpcProvider>
+      <StatusBar style="auto" />
+    </View>
   );
 }
 
