@@ -23,7 +23,7 @@ export default function TodoForm() {
 
   return (
     <TextInput
-      className="bg-red-50 border-black border rounded p-2 mb-4 w-full"
+      className="border-black border rounded p-2 mb-4 w-full"
       onSubmitEditing={handleSubmit}
       value={value}
       onChangeText={setValue}
