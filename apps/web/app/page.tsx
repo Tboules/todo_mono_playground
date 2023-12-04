@@ -7,8 +7,8 @@ export default async function Page() {
 
   return (
     <main className="max-w-screen-md m-auto p-2">
-      <div className="flex">
-        <h1 className="text-3xl font-bold underline">Todo List</h1>
+      <div className="flex flex-col gap-4">
+        <h1 className="text-3xl font-bold">Todo List</h1>
         <TodoForm />
         <TodoList initialTodos={todos} />
       </div>

@@ -3,6 +3,13 @@ import { Input } from "@repo/ui/components/ui/input";
 import { trpc } from "../_trpc/client";
 import { RouterOutputs } from "@repo/api";
 import { Button } from "@repo/ui/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@repo/ui/components/ui/card";
 
 export default function TodoCard({
   todo,
@@ -14,41 +21,49 @@ export default function TodoCard({
   const utils = trpc.useUtils();
 
   return (
-    <div key={todo.id}>
-      <p>{todo.task}</p>
-      <Input
-        type="checkbox"
-        onChange={(e) => {
-          todosUpdate.mutate(
-            {
-              ...todo,
-              status: e.target.checked == true ? "done" : "in-progress",
-              lastUpdated: new Date(Date.now()),
-            },
-            {
-              onSuccess: () => {
-                utils.todos.invalidate();
+    <Card key={todo.id}>
+      <CardHeader>
+        <CardTitle>Todo</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <p>{todo.task}</p>
+      </CardContent>
+      <CardFooter className='flex justify-between'>
+        <Input
+          type="checkbox"
+          className='w-6'
+          onChange={(e) => {
+            todosUpdate.mutate(
+              {
+                ...todo,
+                status: e.target.checked == true ? "done" : "in-progress",
+                lastUpdated: new Date(Date.now()),
               },
-            },
-          );
-        }}
-        checked={todo.status == "done"}
-        disabled={todosUpdate.isLoading}
-      />
+              {
+                onSuccess: () => {
+                  utils.todos.invalidate();
+                },
+              },
+            );
+          }}
+          checked={todo.status == "done"}
+          disabled={todosUpdate.isLoading}
+        />
 
-      <Button
-        disabled={todosDelete.isLoading}
-        onClick={() => {
-          todosDelete.mutate(
-            { id: todo.id },
-            {
-              onSuccess: () => utils.todos.invalidate(),
-            },
-          );
-        }}
-      >
-        D
-      </Button>
-    </div>
+        <Button
+          disabled={todosDelete.isLoading}
+          onClick={() => {
+            todosDelete.mutate(
+              { id: todo.id },
+              {
+                onSuccess: () => utils.todos.invalidate(),
+              },
+            );
+          }}
+        >
+          Delete
+        </Button>
+      </CardFooter>
+    </Card>
   );
 }
