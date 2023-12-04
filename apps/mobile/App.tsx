@@ -1,24 +1,26 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import TodoList from "./components/TodoList";
 import { TrpcProvider } from "./_trpc/provider";
+import TodoForm from "./components/TodoForm";
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <TrpcProvider>
-        <TodoList />
+        <View className="flex-1 p-2 bg-blue-100 items-center justify-center">
+          <Text className="text-2xl mb-2 font-bold">Todo List</Text>
+          <TodoForm />
+          <TodoList />
+        </View>
       </TrpcProvider>
       <StatusBar style="auto" />
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
   },
 });

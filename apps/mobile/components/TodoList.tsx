@@ -5,7 +5,6 @@ export default function TodoList() {
   const todosQuery = trpc.todos.all.useQuery();
 
   return (
-    <SafeAreaView>
       <FlatList
         data={todosQuery.data}
         renderItem={({ item }) => {
@@ -17,6 +16,5 @@ export default function TodoList() {
         }}
         keyExtractor={(item) => item.id.toString()}
       />
-    </SafeAreaView>
   );
 }
